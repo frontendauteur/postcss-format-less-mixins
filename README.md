@@ -6,22 +6,89 @@
 [ci-img]:  https://travis-ci.org/frontendauteur/postcss-format-less-mixins.svg
 [ci]:      https://travis-ci.org/frontendauteur/postcss-format-less-mixins
 
-```css
-.foo {
-    /* Input example */
+## Installation
+
+```js
+npm install postcss-format-less-mixins
+```
+
+## Example
+
+```less
+/* Input Example */
+.a {
+
+    .myMixin()
+    ;
+}
+.b {
+    background: rebeccapurple;
+
+    .myMixin()
+    ;
+}
+.c {
+    .myOtherMixin()
+    ;
+
+    .myMixin()
+    ;
+}
+.d {
+
+    .myOtherMixin()
+    ;
+
+    .myMixin()
+    ;
+}
+.e {
+    background: rebeccapurple;
+
+    .f {
+        background: transparent;
+
+        .myMixin()
+        ;
+    }
 }
 ```
 
-```css
-.foo {
-  /* Output example */
+```less
+/* Output Example */
+.a {
+    .myMixin();
+}
+.b {
+    background: rebeccapurple;
+    .myMixin();
+}
+.c {
+    .myOtherMixin();
+    .myMixin();
+}
+.d {
+    .myOtherMixin();
+    .myMixin();
+}
+.e {
+    background: rebeccapurple;
+
+    .f {
+        background: transparent;
+        .myMixin();
+    }
 }
 ```
 
 ## Usage
 
 ```js
-postcss([ require('postcss-format-less-mixins') ])
+postcss([
+    require('postcss-format-less-mixins')
+]).process(YOUR_LESS, {
+    syntax: require('postcss-less')
+})
 ```
 
-See [PostCSS] docs for examples for your environment.
+Use Stylefmt **before** using this plugin.

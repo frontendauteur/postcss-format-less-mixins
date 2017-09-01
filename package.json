@@ -1,6 +1,6 @@
 {
   "name": "postcss-format-less-mixins",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "PostCSS plugin to format Less mixin calls where Stylefmt fails",
   "keywords": [
     "postcss",
@@ -20,13 +20,13 @@
   },
   "homepage": "https://github.com/frontendauteur/postcss-format-less-mixins",
   "dependencies": {
-    "postcss": "^6.0.1"
+    "postcss": "^6.0.1",
+    "postcss-less": "^1.1.0"
   },
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-config-postcss": "^2.0.2",
-    "jest": "^20.0.0",
-    "postcss-less": "^1.1.0"
+    "jest": "^20.0.0"
   },
   "scripts": {
     "test": "jest && eslint *.js"
